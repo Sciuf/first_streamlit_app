@@ -43,9 +43,9 @@ except URLError as e:
 #import snowflake.connector
 streamlit.header("Hello the fruit load list contains:")
 def get_fruit_load_list():
-    with my_cnx.cursor() as my_cur
-    my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
-    return my_cur.fetchall()
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+        return my_cur.fetchall()
 
 if mystreamlit.button('Get fruitLoadList'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
